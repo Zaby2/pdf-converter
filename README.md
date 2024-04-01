@@ -1,6 +1,6 @@
 # PDF Converter Service using Spring MVC
 
-This project is a PDF converter service developed using Spring MVC framework. It provides functionality to convert various file formats to PDF utilizing configurable servlets and leveraging Tesseract AI for image resolution.
+This project is a PDF converter service developed using Spring MVC framework. It provides functionality to convert PDF formats to PDF, get the text from pdf image, resolve key words in the pdf, utilizing configurable servlets and leveraging Tesseract AI for image resolution.
 
 ## Technologies Used:
 
@@ -31,6 +31,6 @@ This project follows the MVC (Model-View-Controller) architecture pattern, where
 5. Deploy the WAR file generated to Apache Tomcat.
 6. Access the application using the provided URL.
 
-This PDF converter service provides a seamless experience for users to convert various file formats to PDF, with the added flexibility of configurable servlets and the power of Tesseract AI for image resolution.
+
 
 
