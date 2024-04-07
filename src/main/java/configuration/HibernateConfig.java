@@ -18,8 +18,9 @@ public class HibernateConfig {
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
+        sessionFactory.setMappingResources("Item.xml");
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("model");
+        //sessionFactory.setPackagesToScan("hibernate");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -42,7 +43,7 @@ public class HibernateConfig {
     }
     private final Properties hibernateProperties() {
         Properties hibernateProperties = new Properties();
-        //  hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
+          hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "create");
         hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         hibernateProperties.setProperty("hibernate.showSql", "false");
         return hibernateProperties;

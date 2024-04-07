@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="model4mapping">
+
+    <class name="FileIn" >
+        <id name="documentId" type="java.lang.Long">
+            <generator class="native"/>
+        </id>
+        <property name="documentName" column="document_name" type="string" length="512" not-null="true"/>
+        <property name="author" column="author" type="string" length="512" not-null="true"/>
+        <property name="creationDate" column="creation_date" type="java.time.LocalDateTime" not-null="true"/>
+        <property name="binaryText" column="binary_text" type="binary" not-null="true"/>
+        <property name="recognizedText" column="recognized_text" type="text" not-null="true"/>
+        <property name="keyWords" column="key_words" type="string"/>
+    </class>
+</hibernate-mapping>

@@ -1,6 +1,6 @@
 package repository;
 
-import model.FileIn;
+import model4mapping.FileIn;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -36,7 +36,9 @@ public class FileRepository {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
             // Запрос на получение всех файлов
-            Query<FileIn> query = session.createQuery("FROM FileIn", FileIn.class);
+            Query query = session.createSQLQuery("SELECT * FROM filein").addEntity(FileIn.class);
+            files = query.list();
+            // Query<FileIn> query = session.createQuery("FROM FileIn", FileIn.class);
             files = query.list();
             transaction.commit();
         } catch (Exception e) {
