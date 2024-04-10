@@ -1,7 +1,7 @@
 package service;
 
 import lombok.SneakyThrows;
-import model4mapping.FileIn;
+import model.FileIn;
 import net.sourceforge.tess4j.Tesseract;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;

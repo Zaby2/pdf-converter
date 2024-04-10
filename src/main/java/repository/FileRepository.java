@@ -1,6 +1,6 @@
 package repository;
 
-import model4mapping.FileIn;
+import model.FileIn;
 
 
 import lombok.extern.slf4j.Slf4j;

@@ -4,7 +4,7 @@ package controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import model4mapping.FileIn;
+import model.FileIn;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;

@@ -18,9 +18,9 @@ public class HibernateConfig {
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-        sessionFactory.setMappingResources("Item.xml");
+        //sessionFactory.setMappingResources("Item.xml");
         sessionFactory.setDataSource(dataSource());
-        //sessionFactory.setPackagesToScan("hibernate");
+        sessionFactory.setPackagesToScan("model");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
