@@ -43,6 +43,7 @@ public class FileService {
         fileIn.setDocumentName(fileName);
         fileIn.setKeyWords(findKeyWords(recognizedText));
         fileIn.setCreationDate(LocalDateTime.now());
+        fileIn.setUpdDate(LocalDateTime.now());
         fileIn.setRecognizedText(recognizedText);
         fileRepository.saveFile(fileIn);
     }
@@ -56,6 +57,7 @@ public class FileService {
     @SneakyThrows
     public File downloadFile(String id) {
         FileIn fileIn = fileRepository.getFileById(id);
+        fileRepository.updateFileDateAfterDownload(id);
         File file = new File(fileIn.getDocumentName() + ".pdf");
         OutputStream os = new FileOutputStream(file);
         os.write(fileIn.getBinaryText());

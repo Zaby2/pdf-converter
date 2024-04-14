@@ -93,4 +93,15 @@ public class FileRepository {
         tx.commit();
         session.close();
     }
+    public void updateFileDateAfterDownload(String id) {
+        Session session = sessionFactory.openSession();
+        Transaction tx = null;
+        tx = session.beginTransaction();
+        Long documentId = Long.parseLong(id);
+        FileIn fileIn = session.get(FileIn.class, documentId);
+        fileIn.setUpdDate(LocalDateTime.now());
+        session.save(fileIn);
+        tx.commit();
+        session.close();
+    }
 }

@@ -26,6 +26,8 @@ public class FileIn {
     private String author;
     @Column(nullable=false, length=512)
     private LocalDateTime creationDate;
+    @Column(nullable=false, length=512)
+    private LocalDateTime updDate;
     @Column(nullable=false, length=10000)
     private byte[] binaryText;
     @Column(nullable=false)
@@ -33,7 +35,7 @@ public class FileIn {
     private String recognizedText;
     private String keyWords;
 
-    public FileIn(Long documentId, String documentName, String author, LocalDateTime creationDate, byte[] binaryText, String recognizedRText, String keyWords) {
+    public FileIn(Long documentId, String documentName, String author, LocalDateTime creationDate, byte[] binaryText, String recognizedRText, String keyWords,LocalDateTime updDate) {
         super();
         this.documentId = documentId;
         this.documentName = documentName;
@@ -42,5 +44,6 @@ public class FileIn {
         this.binaryText = binaryText;
         this.recognizedText = recognizedRText;
         this.keyWords = keyWords;
+        this.updDate = updDate;
     }
 }
