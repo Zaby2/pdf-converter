@@ -3,7 +3,7 @@ package repository;
 import model.FileIn;
 
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 
-@Slf4j
+
 @Repository
 @Transactional
 @ComponentScan("configuration")
