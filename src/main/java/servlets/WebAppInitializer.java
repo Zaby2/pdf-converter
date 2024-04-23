@@ -26,11 +26,6 @@ public class WebAppInitializer implements WebApplicationInitializer {
                 "SpringDispatcher", new DispatcherServlet(appContext));
         dispatcher.setLoadOnStartup(1);
         dispatcher.addMapping("/");
-
-        CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-        characterEncodingFilter.setEncoding("UTF-8");
-        characterEncodingFilter.setForceEncoding(true);
-       // characterEncodingFilter.set
         File uploadDirectory = new File(System.getProperty("java.io.tmpdir"));
         MultipartConfigElement multipartConfigElement = new  MultipartConfigElement(uploadDirectory.getAbsolutePath(), 1000000000, 1000000000 * 2, 1000000000 / 2);
         dispatcher.setMultipartConfig(multipartConfigElement);
